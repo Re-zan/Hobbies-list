@@ -1,7 +1,9 @@
 import { toast } from "react-hot-toast";
+import { FaRegCalendarTimes, FaRegEdit } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-const ListDatas = ({ datas, index }) => {
-  const { _id, name, number, email, hobbies } = datas;
+const ListDatas = ({ data, index, refetch }) => {
+  const { _id, name, number, email, hobbies } = data;
 
   //delete data
   const handleDeleteData = () => {
@@ -12,6 +14,7 @@ const ListDatas = ({ datas, index }) => {
       .then((data) => {
         if (data.deletedCount > 0) {
           toast.success("Deleted Successfully!");
+          refetch();
         }
       });
   };
@@ -29,9 +32,17 @@ const ListDatas = ({ datas, index }) => {
       <td>{email}</td>
       <td>{hobbies}</td>
       <td>
-        {" "}
-        <button>edit</button>{" "}
-        <button onClick={() => handleDeleteData(_id)}>Delete</button>
+        <Link to={`/${_id}`}>
+          <button className="btn btn-accent">
+            <FaRegEdit></FaRegEdit>
+          </button>
+        </Link>{" "}
+        <button
+          onClick={() => handleDeleteData(_id)}
+          className=" btn bg-red-800 hover:bg-red-800 text-white"
+        >
+          <FaRegCalendarTimes></FaRegCalendarTimes>
+        </button>
       </td>
     </tr>
   );
