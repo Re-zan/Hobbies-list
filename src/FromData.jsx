@@ -11,7 +11,7 @@ const FromData = ({ refetch }) => {
 
   //creat list data
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/hobbies", {
+    fetch("https://hobbies-server-side.vercel.app/hobbies", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -118,8 +118,8 @@ const FromData = ({ refetch }) => {
           </div>
         </form>
 
-        <form method="dialog" className="">
-          <div className="modal-action">
+        <form method="dialog">
+          <div className="modal-action -mt-40">
             <button className="btn bg-slate-600 hover:bg-slate-600 text-white">
               Close
             </button>

@@ -24,9 +24,12 @@ const useGetData = () => {
   const { data: datas, refetch } = useQuery({
     queryKey: ["datas"],
     queryFn: async () => {
-      const response = await fetch("http://localhost:5000/hobbies", {
-        method: "GET",
-      });
+      const response = await fetch(
+        "https://hobbies-server-side.vercel.app/hobbies",
+        {
+          method: "GET",
+        }
+      );
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }

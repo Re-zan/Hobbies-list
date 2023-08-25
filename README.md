@@ -1,8 +1,33 @@
-# React + Vite
+# Hobbies
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+It's a simple curd operation website.
 
-Currently, two official plugins are available:
+## Live Link
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Hosted in Netlify -> [Hobbies](https://hobbies-lists.netlify.app/)
+
+## GitHub client-side Link
+
+- GitHub Link -> [Link](https://github.com/Re-zan/Hobbies-list)
+
+## GitHub server-side Link
+
+- GitHub Link -> [Link](https://github.com/Re-zan/Hobbies-server-side)
+
+## Used packages/ technology name
+
+## React Router Dom v6.4
+
+- Documentation Link -> [Link](https://reactrouter.com/en/main/start/overview)
+
+## React Icon
+
+- React Icon -> [React Icon](https://react-icons.github.io/react-icons/)
+
+## React Hot Toast
+
+- Documentation Link -> [Link](https://www.npmjs.com/package/react-hot-toast)
+
+## React TanStack Query
+
+- Documentation Link -> [Link](https://tanstack.com/query/latest)

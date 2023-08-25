@@ -11,8 +11,10 @@ const ListDataUpdate = () => {
     handleSubmit,
     reset,
   } = useForm();
+
+  // data updated
   const onSubmit = (data) => {
-    fetch(`http://localhost:5000/hobbies/${_id}`, {
+    fetch(`https://hobbies-server-side.vercel.app/hobbies/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

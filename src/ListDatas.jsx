@@ -2,12 +2,12 @@ import { toast } from "react-hot-toast";
 import { FaRegCalendarTimes, FaRegEdit } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const ListDatas = ({ data, index, refetch }) => {
+const ListDatas = ({ data, index, refetch, isSelected, onSelect }) => {
   const { _id, name, number, email, hobbies } = data;
 
   //delete data
   const handleDeleteData = () => {
-    fetch(`http://localhost:5000/hobbies/${_id}`, {
+    fetch(`https://hobbies-server-side.vercel.app/hobbies/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -23,7 +23,12 @@ const ListDatas = ({ data, index, refetch }) => {
     <tr>
       <th>
         <label>
-          <input type="checkbox" className="checkbox" />
+          <input
+            type="checkbox"
+            className="checkbox"
+            checked={isSelected}
+            onChange={onSelect}
+          />
         </label>
       </th>
       <td>{++index}</td>

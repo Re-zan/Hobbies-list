@@ -10,7 +10,8 @@ const router = createBrowserRouter([
   {
     path: "/:id",
     element: <ListDataUpdate></ListDataUpdate>,
-    loader: ({ params }) => fetch(`http://localhost:5000/${params.id}`),
+    loader: ({ params }) =>
+      fetch(`https://hobbies-server-side.vercel.app/${params.id}`),
   },
 ]);
 
