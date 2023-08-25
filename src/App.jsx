@@ -1,8 +1,11 @@
 import { useForm } from "react-hook-form";
 import { FaEnvelope, FaPhoneAlt, FaUserAlt } from "react-icons/fa";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
+import { useEffect, useState } from "react";
+import ListDatas from "./ListDatas";
 
 const App = () => {
+  const [listData, setListData] = useState();
   const {
     register,
     formState: { errors },
@@ -23,14 +26,23 @@ const App = () => {
           toast.success("List Has Been Added Successfully!");
           reset();
         }
-
-        console.log(hobbies_data);
       });
   };
+  // // geting data from db
+  useEffect(() => {
+    fetch("http://localhost:5000/hobbies", {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((datas) => {
+        setListData(datas);
+      });
+  }, []);
+
   return (
-    <div>
+    <div className="my_container ">
+      <h2>iugiuif</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Toaster position="top-center" reverseOrder={false} />
         {/* name  */}
         <div className="form-control w-full my-4">
           <div className=" flex items-center justify-evenly bg-red-700 w-[300px] md:w-[600px] lg:w-[800px] mx-auto">
@@ -120,6 +132,35 @@ const App = () => {
           </button>
         </div>
       </form>
+      {/* tabsgsgigf */}
+      <div className="overflow-x-auto">
+        <table className="table">
+          {/* head */}
+          <thead>
+            <tr>
+              <th>
+                <label></label>
+              </th>
+              <th>Serial Number</th>
+              <th>Name</th>
+              <th>Number</th>
+              <th>Email</th>
+              <th>Hobbies</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {/* row 1 */}
+            {listData?.map((datas, index) => (
+              <ListDatas
+                key={datas._id}
+                datas={datas}
+                index={index}
+              ></ListDatas>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

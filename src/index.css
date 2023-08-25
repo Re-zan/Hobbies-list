@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.my_container {
+  @apply sm:max-w-full md:max-w-full lg:max-w-screen-xl mx-auto;
+}
